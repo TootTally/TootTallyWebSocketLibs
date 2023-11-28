@@ -4,7 +4,6 @@ using BepInEx;
 namespace TootTallyWebsocketLibs
 {
     [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    [BepInDependency("TootTallyAccounts", BepInDependency.DependencyFlags.HardDependency)]
     public class Plugin : BaseUnityPlugin
     {
         public static Plugin Instance;

@@ -62,10 +62,10 @@ namespace TootTallyWebsocketLibs
         }
 
 
-        public void ConnectToWebSocketServer(string url, bool isHost)
+        public void ConnectToWebSocketServer(string url, string apiKey, bool isHost)
         {
             _websocket = CreateNewWebSocket(url);
-            _websocket.CustomHeaders = new Dictionary<string, string>() { { "Authorization", "APIKey " + TootTallyAccounts.Plugin.GetAPIKey }, { "Version", VERSION } };
+            _websocket.CustomHeaders = new Dictionary<string, string>() { { "Authorization", "APIKey " + apiKey }, { "Version", VERSION } };
             Plugin.LogInfo($"Connecting to WebSocket server...");
             IsHost = isHost;
             _websocket.ConnectAsync();
