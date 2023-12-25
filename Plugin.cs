@@ -9,6 +9,7 @@ namespace TootTallyWebsocketLibs
         public static Plugin Instance;
         public static void LogInfo(string message) => Instance.Logger.LogInfo(message);
         public static void LogError(string message) => Instance.Logger.LogError(message);
+
         private void Awake()
         {
             if (Instance != null) return;
