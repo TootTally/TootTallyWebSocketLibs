@@ -9,8 +9,6 @@ namespace TootTallyWebsocketLibs
 {
     public class WebsocketManager
     {
-        private const string VERSION = "1.3.0";
-
         private WebSocket _websocket;
         public bool IsHost { get; private set; }
         public bool IsConnected { get; private set; }
@@ -65,7 +63,7 @@ namespace TootTallyWebsocketLibs
         public void ConnectToWebSocketServer(string url, string apiKey, bool isHost)
         {
             _websocket = CreateNewWebSocket(url);
-            _websocket.CustomHeaders = new Dictionary<string, string>() { { "Authorization", "APIKey " + apiKey }, { "Version", VERSION } };
+            _websocket.CustomHeaders = new Dictionary<string, string>() { { "Authorization", "APIKey " + apiKey }, { "Version", _version } };
             Plugin.LogInfo($"Connecting to WebSocket server...");
             IsHost = isHost;
             _websocket.ConnectAsync();
