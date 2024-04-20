@@ -27,12 +27,24 @@ namespace TootTallyWebsocketLibs
 
         public void SendToSocket(byte[] data)
         {
-            _websocket?.SendAsync(data, null);
+            if (HasAnyErrorsCheck()) return;
+            _websocket.SendAsync(data, null);
         }
 
         public void SendToSocket(string data)
         {
-            _websocket?.SendAsync(data, null);
+            if (HasAnyErrorsCheck()) return;
+            _websocket.SendAsync(data, null);
+        }
+
+        public bool HasAnyErrorsCheck(bool outputToLogs = true)
+        {
+            if (_websocket == null)
+            {
+                Plugin.LogError("Websocket was null.");
+                return true;
+            }
+            return false;
         }
 
         protected virtual void OnDataReceived(object sender, MessageEventArgs e) { }
