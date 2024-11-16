@@ -1,6 +1,6 @@
 #!/bin/bash
 
-csprojVer=$(grep -P "<Version>[0-9]+\.[0-9]+\.[0-9]+<\/Version>" TootTallyWebSocketLibs.csproj | sed -E --expression="s/(<[\/]*Version>)| //g");
+csprojVer=$(grep -P "<Version>[0-9]+\.[0-9]+\.[0-9]+<\/Version>" TootTallyWebsocketLibs.csproj | sed -E --expression="s/(<[\/]*Version>)| //g");
 manifestVer=$(grep -P "\"version_number\":( )*\"[0-9]+\.[0-9]+\.[0-9]+\"" thunderstore/manifest.json | sed -E --expression="s/(version_number)| |,|:|\"//g");
 readmeVer=$(grep -P "> Version: \d+.\d+.\d+" README.md | sed -E --expression="s/> Version: //g");
 
