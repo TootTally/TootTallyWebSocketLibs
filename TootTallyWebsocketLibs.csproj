@@ -15,7 +15,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/TootTally/TootTallyGameModifiers</RepositoryUrl>
+    <RepositoryUrl>https://github.com/TootTally/TootTallyWebsocketLibs</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <DefaultLanguage>en</DefaultLanguage>
   </PropertyGroup>
