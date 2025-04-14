@@ -107,6 +107,7 @@ namespace TootTallyWebsocketLibs
         public static Dictionary<ushort, string> codeToReasonDict = new Dictionary<ushort, string>()
         {
             {1000, "Disconnected" },
+            {1005, "Self-Disconnected" },
             {1001, "Forced Disconnected" },
             {4001, "Invalid API Key" },
             {4002, "Invalid Version" },
