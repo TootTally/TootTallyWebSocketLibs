@@ -1,2 +1,19 @@
-# TootTally Module Template
-This repository is intended to be used as a template for future modules for the [TootTally](https://toottally.com) project.
+# TootTally WebsocketLibs
+
+> Version: 1.0.2
+
+Websocket server management for [TootTally](https://toottally.com/).
+
+Still in active development.
+
+### Customer Service
+
+For more help, join the [Trombone Champ Modding Discord](https://discord.gg/KVzKRsbetJ) or the [TootTally Discord](https://discord.gg/9jQmVEDVTp)
+
+### TootTally Installation Instructions
+
+Charts being tracked can be searched in https://toottally.com/search/ or accessed programmatically in https://toottally.com/api/songs/
+Charts can be manually uploaded in https://toottally.com/upload/
+
+A guide for creating custom themes can be found [here](https://bit.ly/toottallythemeguide)
+
