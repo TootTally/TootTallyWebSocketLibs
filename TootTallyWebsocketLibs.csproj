@@ -51,7 +51,7 @@
     <Copy SourceFiles="thunderstore\icon.png" DestinationFolder="$(OutDir)thunderstore" />
     <Copy SourceFiles="thunderstore\CHANGELOG.md" DestinationFolder="$(OutDir)thunderstore" />
     <Copy SourceFiles="thunderstore\manifest.json" DestinationFolder="$(OutDir)thunderstore" />
-    <Copy SourceFiles="README.md" DestinationFolder="$(OutDir)thunderstore" />
+    <Copy SourceFiles="thunderstore\README.md" DestinationFolder="$(OutDir)thunderstore" />
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(OutDir)thunderstore/plugins" />
     <ZipDirectory DestinationFile="$(ProjectDir)$(ProjectName).zip" SourceDirectory="$(OutDir)thunderstore" />
   </Target>

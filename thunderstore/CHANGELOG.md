@@ -1,5 +1,11 @@
 #### Changelog:
 
+`v1.0.1` -> `v1.0.3`
+
+```diff
++ Added disconnect codes
+```
+
 `v1.0.0` -> `v1.0.1`
 
 ```diff
