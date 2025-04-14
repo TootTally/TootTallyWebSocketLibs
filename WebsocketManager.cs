@@ -63,14 +63,24 @@ namespace TootTallyWebsocketLibs
             Plugin.LogInfo($"Connected to WebSocket server {_websocket.Url}");
         }
 
-        protected virtual void OnWebSocketClose(object sender, EventArgs e)
+        protected virtual void OnWebSocketClose(object sender, CloseEventArgs e)
         {
             IsConnected = false;
             IsHost = false;
             ConnectionPending = false;
-            Plugin.LogInfo("Disconnected from websocket");
+            if (codeToReasonDict.ContainsKey(e.Code))
+                Plugin.LogInfo($"Disconnected from server [{e.Code}]: {codeToReasonDict[e.Code]}.");
+            else
+                Plugin.LogInfo($"Disconnected from server [{e.Code}]: {e.Reason}.");
         }
 
+        protected virtual void OnWebSocketError(object sender, ErrorEventArgs e)
+        {
+            IsConnected = false;
+            IsHost = false;
+            ConnectionPending = false;
+            Plugin.LogError(e.Message);
+        }
 
         public void ConnectToWebSocketServer(string url, string apiKey, bool isHost)
         {
@@ -93,5 +103,24 @@ namespace TootTallyWebsocketLibs
             ws.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
             return ws;
         }
+
+        public static Dictionary<ushort, string> codeToReasonDict = new Dictionary<ushort, string>()
+        {
+            {1000, "Disconnected" },
+            {1001, "Forced Disconnected" },
+            {4001, "Invalid API Key" },
+            {4002, "Invalid Version" },
+            {4003, "Outdated Version" },
+            {4101, "Multiplayer Server Only" },
+            {4102, "Invalid Spectator ID" },
+            {4103, "Already Broadcasting" },
+            {4104, "Already Spectating Someone" },
+            {4105, "Invalid Userstate" },
+            {4106, "Unauthorized Spectating" },
+            {4201, "Invalid Lobby Code" },
+            {4202, "Wrong Password" },
+            {4203, "Exceeded Player Cap" },
+            {4204, "Banned From Lobby" },
+        };
     }
 }
